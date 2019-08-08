@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 import './index.less';
+import UtilD3 from '../../utils/utilD3';
 
 export default class extends Component {
     state = {
@@ -17,35 +18,33 @@ export default class extends Component {
 
     componentDidMount() {
         const { chartData } = this.props;
-        const { lineData } = chartData;
 
         this.setState({
-            data: lineData
+            data: chartData
         }, () => {
-            this.drawChart(lineData);
+            this.drawChart(chartData);
         });
     }
 
     componentWillReceiveProps(nextProps) {
         const { chartData } = this.props;
-        const { lineData } = chartData;
-        const newLineData = nextProps.chartData.lineData;
+        const newLineData = nextProps.chartData;
+        const newDeletePart = nextProps.deletePart;
 
-        const oldDataLen = lineData.length;
+        const oldDataLen = chartData.length;
         const newDataLen = newLineData.length;
 
         if (newDataLen !== oldDataLen) {
             this.setState({
                 data: newLineData
             }, () => {
-                this.updateChart(newLineData);
+                this.updateChart(newLineData, newDeletePart);
             });
         }
     }
 
     drawChart = (data) => {
         const { margin, width, height } = this.state;
-
         const svg = d3.select('#mainChart').append('svg')
             .attr('class', 'svg-wrap')
             .attr('width', width)
@@ -70,7 +69,7 @@ export default class extends Component {
                 .attr("x", 3)
                 .attr("text-anchor", "start")
                 .attr("font-weight", "bold")
-                .text(data.y));
+                .text(data.value));
 
         const line = d3.line()
             .defined(d => !isNaN(d.value))
@@ -85,7 +84,7 @@ export default class extends Component {
         svg.append("g")
             .call(yAxis);
 
-        svg.append("path")
+        let path = svg.append("path")
             .attr('class', 'path-line')
             .datum(data)
             .attr("fill", "none")
@@ -94,10 +93,28 @@ export default class extends Component {
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr("d", line);
+
+        UtilD3.createCurveFadeIn(path, 1500);
     };
 
-    updateChart = (data) => {
+    updateChart = (data, deletePart = []) => {
         const { margin, width, height } = this.state;
+
+        const deletePartLen = deletePart.length;
+
+        if (deletePartLen > 0) {
+            for (let i = 0; i < deletePartLen; i++) {
+                const curItem = deletePart[i];
+                const curItemCls = curItem.cls;
+
+                if (curItem.isAll) {
+                    d3.selectAll(`.${curItemCls}`).remove();
+                } else {
+                    d3.select(`.${curItemCls}`).remove();
+                }
+            }
+        }
+
 
         const x = d3.scaleTime()
             .domain(d3.extent(this.props.axisRangeData, d => d.date))
@@ -112,9 +129,8 @@ export default class extends Component {
             .x(d => x(d.date))
             .y(d => y(d.value));
 
-        d3.select('.svg-wrap')
-            .append('path')
-            .attr('class', 'new-path-line')
+        let path = d3.select('.svg-wrap').append('path')
+            .attr('class', 'path-line')
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "steelblue")
@@ -122,6 +138,7 @@ export default class extends Component {
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr("d", line);
+        UtilD3.createCurveFadeIn(path, 1500);
     };
 
     render() {

@@ -43,9 +43,23 @@ export default class extends Component {
                         { date: new Date('2019-09-08T00:00'), value: 6500 },
                         { date: new Date('2019-09-09T00:00'), value: 5120 },
                     ],
+                    deletePart: [
+                        {
+                            cls: 'path-line',
+                            isAll: true,
+                        }
+                    ],
                 },
                 {
                     lineData: [
+                        // { date: new Date('2019-09-01T00:00'), value: 1200 },
+                        // { date: new Date('2019-09-02T00:00'), value: 1800 },
+                        // { date: new Date('2019-09-03T00:00'), value: 1900 },
+                        // { date: new Date('2019-09-04T00:00'), value: 3200 },
+                        // { date: new Date('2019-09-05T00:00'), value: 7800 },
+                        // { date: new Date('2019-09-06T00:00'), value: 1700 },
+                        // { date: new Date('2019-09-07T00:00'), value: 2310 },
+                        // { date: new Date('2019-09-08T00:00'), value: 6500 },
                         { date: new Date('2019-09-09T00:00'), value: 5120 },
                         { date: new Date('2019-09-10T00:00'), value: 6090 },
                         { date: new Date('2019-09-11T00:00'), value: 1342 },
@@ -53,6 +67,7 @@ export default class extends Component {
                         { date: new Date('2019-09-13T00:00'), value: 7623 },
                         { date: new Date('2019-09-14T00:00'), value: 8804 },
                     ],
+                    deletePart: [''],
                 },
                 3,
                 4,
@@ -83,7 +98,7 @@ export default class extends Component {
     };
 
     componentDidMount() {
-        console.log('this.props', this.props); // eslint-disable-line
+        // console.log('this.props', this.props); // eslint-disable-line
     }
 
     // 前进一步
@@ -116,10 +131,11 @@ export default class extends Component {
 
     render() {
         const { step, data, axisRangeData } = this.state;
+        const { deletePart, lineData } = data.chartData[step];
 
         return (
             <div className="future-guide-wrap guide-wrap">
-                <Chart chartData={data.chartData[step]} axisRangeData={axisRangeData} />
+                <Chart deletePart={deletePart} chartData={lineData} axisRangeData={axisRangeData} />
                 <Operation operationData={data.operationData[step]}/>
                 <div className="back-prev" onClick={() => this.stepBackward()}>
                     <span className="back-prev-text">&lt;&lt;我后悔了</span>

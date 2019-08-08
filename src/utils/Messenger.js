@@ -39,4 +39,4 @@ class Messenger {
     }
 }
 
-export const message = new Messenger;
+export const message = new Messenger();

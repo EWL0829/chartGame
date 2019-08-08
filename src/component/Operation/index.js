@@ -14,7 +14,7 @@ export default class extends Component {
             this.setState({
                 choseName: routeName
             }, () => {
-                console.log('this.forward.state', this.state); // eslint-disable-line
+                // console.log('this.forward.state', this.state); // eslint-disable-line
             });
         });
 
@@ -24,7 +24,7 @@ export default class extends Component {
             this.setState({
                 choseName: routeName
             }, () => {
-                console.log('this.backward.state', this.state); // eslint-disable-line
+                // console.log('this.backward.state', this.state); // eslint-disable-line
             });
         })
     }

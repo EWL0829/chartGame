@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7886bae-7a1e-4e09-8084-78b78f3ffad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/utilD3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Chart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Chart/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/futureGuide/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/futureGuide/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Messenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Messenger.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+            <state relative-caret-position="255">
+              <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -31,13 +32,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/Messenger.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/Chart/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="341">
+              <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/utilD3.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -70,10 +89,18 @@
       <find>3000</find>
       <find>cssRegex</find>
       <find>react-router</find>
-      <find>console</find>
       <find>Mess</find>
       <find>curve</find>
+      <find>xAxisData</find>
+      <find>path-line</find>
+      <find>UtilD3.clear</find>
+      <find>console</find>
+      <find>drawChart</find>
+      <find>chartData</find>
     </findStrings>
+    <replaceStrings>
+      <replace>axisRangeData</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config</dir>
       <dir>$PROJECT_DIR$/scripts</dir>
@@ -94,18 +121,18 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/component/Chart/index.less" />
         <option value="$PROJECT_DIR$/src/component/Operation/index.less" />
-        <option value="$PROJECT_DIR$/src/utils/Messenger.js" />
         <option value="$PROJECT_DIR$/src/component/Operation/index.js" />
         <option value="$PROJECT_DIR$/src/pages/futureGuide/index.less" />
-        <option value="$PROJECT_DIR$/src/component/Chart/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/Messenger.js" />
+        <option value="$PROJECT_DIR$/src/utils/utilD3.js" />
         <option value="$PROJECT_DIR$/src/pages/futureGuide/index.js" />
+        <option value="$PROJECT_DIR$/src/component/Chart/index.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -160,6 +187,12 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="futureGuide" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="chart-game-guide" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chart-game-guide" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -201,7 +234,7 @@
       <workItem from="1564643180431" duration="3841000" />
       <workItem from="1564711992474" duration="506000" />
       <workItem from="1564727779977" duration="234000" />
-      <workItem from="1565247462339" duration="7433000" />
+      <workItem from="1565247462339" duration="12393000" />
     </task>
     <task id="LOCAL-00001" summary="初始化路线前进以及后退逻辑">
       <created>1565251820275</created>
@@ -210,17 +243,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565251820275</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="统一横纵坐标的绘制范围">
+      <created>1565255484563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565255484563</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12014000" />
+    <option name="totallyTimeSpent" value="16974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -234,7 +274,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24578314" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24578314" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -245,7 +285,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化路线前进以及后退逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化路线前进以及后退逻辑" />
+    <MESSAGE value="统一横纵坐标的绘制范围" />
+    <option name="LAST_COMMIT_MESSAGE" value="统一横纵坐标的绘制范围" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -315,13 +356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Messenger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/Operation/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -346,20 +380,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/Chart/index.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/Messenger.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="453">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/utilD3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
+    <entry file="file://$PROJECT_DIR$/src/component/Chart/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+        <state relative-caret-position="341">
+          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
