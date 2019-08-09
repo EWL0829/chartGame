@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Chart from '../../component/Chart';
 import Operation from '../../component/Operation';
 import { message } from "../../utils/Messenger";
+import FirstPage from '../../component/FirstPage';
+import JudgeRoute from '../../component/JudgeRoute';
 import './index.less';
 
 export default class extends Component {
     state = {
         step: 0,
+        // chart绘制区域定义域/值域
         axisRangeData: [
             { date: new Date('2019-09-01T00:00'), value: 0 },
             { date: new Date('2019-09-02T00:00'), value: 10000 },
@@ -44,22 +47,11 @@ export default class extends Component {
                         { date: new Date('2019-09-09T00:00'), value: 5120 },
                     ],
                     deletePart: [
-                        {
-                            cls: 'path-line',
-                            isAll: true,
-                        }
+                        { cls: 'path-line', isAll: true, }
                     ],
                 },
                 {
                     lineData: [
-                        // { date: new Date('2019-09-01T00:00'), value: 1200 },
-                        // { date: new Date('2019-09-02T00:00'), value: 1800 },
-                        // { date: new Date('2019-09-03T00:00'), value: 1900 },
-                        // { date: new Date('2019-09-04T00:00'), value: 3200 },
-                        // { date: new Date('2019-09-05T00:00'), value: 7800 },
-                        // { date: new Date('2019-09-06T00:00'), value: 1700 },
-                        // { date: new Date('2019-09-07T00:00'), value: 2310 },
-                        // { date: new Date('2019-09-08T00:00'), value: 6500 },
                         { date: new Date('2019-09-09T00:00'), value: 5120 },
                         { date: new Date('2019-09-10T00:00'), value: 6090 },
                         { date: new Date('2019-09-11T00:00'), value: 1342 },
@@ -69,36 +61,21 @@ export default class extends Component {
                     ],
                     deletePart: [''],
                 },
-                3,
-                4,
-                5,
-            ],
-            operationData: [
-                {
-                    htmlFrag: (
-                        <div className="guide-step-wrap step-1">
-                            <div className="guide-title">Who do you Choose?</div>
-                            <div className="guide-btn-wrap">
-                                <button className="guide-btn bz" onClick={() => this.stepForward('bz')}>白泽</button>
-                                <button className="guide-btn gd" onClick={() => this.stepForward('gd')}>鬼灯</button>
-                            </div>
-                        </div>
-                    ),
-                },
-                {
-                    htmlFrag: (
-                        <div className="guide-step-wrap step-2">
-                            <div className="guide-title">You made a choice</div>
-                            <div className="guide-content">content maybe changed ...</div>
-                        </div>
-                    ),
-                }
             ],
         }
     };
 
-    componentDidMount() {
-        // console.log('this.props', this.props); // eslint-disable-line
+    constructor(props) {
+        super(props);
+
+        this.operationData = [
+            {
+                htmlFrag: <FirstPage stepForward={this.stepForward.bind(this)} />,
+            },
+            {
+                htmlFrag: <JudgeRoute />,
+            }
+        ];
     }
 
     // 前进一步
@@ -135,8 +112,13 @@ export default class extends Component {
 
         return (
             <div className="future-guide-wrap guide-wrap">
+                {/* 图表展示区域 */}
                 <Chart deletePart={deletePart} chartData={lineData} axisRangeData={axisRangeData} />
-                <Operation operationData={data.operationData[step]}/>
+
+                {/* 操作区域 */}
+                <Operation operationData={this.operationData[step]}/>
+
+                {/* 返回上一关 */}
                 <div className="back-prev" onClick={() => this.stepBackward()}>
                     <span className="back-prev-text">&lt;&lt;我后悔了</span>
                 </div>
