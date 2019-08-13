@@ -1,6 +1,6 @@
 .operation-wrap {
     width: 80%;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
 
     .guide-step-wrap {
         width: 100%;
@@ -13,10 +13,18 @@
             margin: 0 auto 20px;
         }
 
+        .guide-content {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 140%;
+            margin: 10px 0;
+        }
+
         .guide-btn-wrap {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 20px 0 0;
 
             .guide-btn {
                 width: 200px;
@@ -27,16 +35,74 @@
                 outline: none;
                 border: none;
                 cursor: pointer;
-                background: rgba(48, 117, 238, .6);
                 color: rgba(255, 255, 255, .8);
+                background: rgba(48, 117, 238, .8);
                 margin: 0 20px;
                 transition: background linear .1s;
 
+                &.large-size {
+                    width: 450px;
+                }
+
                 &:hover {
-                    background: rgba(48, 117, 238, .8);
                     color: rgba(255, 255, 255, 1);
+                    background: rgba(48, 117, 238, 1);
+                }
+
+                &.up {
+                    background: rgba(109, 177, 106, .8);
+
+                    &:hover {
+                        background: rgba(109, 177, 106, 1);
+                    }
+                }
+
+                &.down {
+                    background: rgba(193, 102, 97, .8);
+
+                    &:hover {
+                        background: rgba(193, 102, 97, 1);
+                    }
                 }
             }
+        }
+    }
+}
+
+// hover展示提示文案的i标签
+.tips-icon {
+    font-family: Georgia, serif;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 0 0 20px;
+    background: rgba(255, 255, 255, .4);
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    vertical-align: middle;
+    border-radius: 50%;
+    font-style: normal;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: attr(data-text);
+        display: none;
+        min-width: 230px;
+        width: fit-content;
+        text-align: left;
+        position: absolute;
+        padding: 5px;
+        background: rgba(0, 0, 0, .8);
+        color: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        bottom: 16px;
+        left: -10px;
+    }
+
+    &:hover {
+        &::before {
+            display: block;
         }
     }
 }

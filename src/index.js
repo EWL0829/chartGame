@@ -8,7 +8,7 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <Route path="/futureGuide" component={FutureGuide} />
+                <Route path="/futureGuide" exact component={FutureGuide} />
             </Router>
         )
     }

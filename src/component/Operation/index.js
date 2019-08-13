@@ -5,26 +5,25 @@ import './index.less';
 export default class extends Component {
     state = {
         choseName: '',
+        type: '',
     };
 
     componentDidMount() {
         this.stopForwardMessage = message.onMessage('stepForward', (data) => {
-            const { routeName } = data;
+            const { routeName, type} = data;
 
             this.setState({
-                choseName: routeName
-            }, () => {
-                // console.log('this.forward.state', this.state); // eslint-disable-line
+                choseName: routeName,
+                type
             });
         });
 
         this.stopBackwardMessage = message.onMessage('stepBackward', (data) => {
-            const { routeName } = data;
+            const { routeName, type } = data;
 
             this.setState({
-                choseName: routeName
-            }, () => {
-                // console.log('this.backward.state', this.state); // eslint-disable-line
+                choseName: routeName,
+                type,
             });
         })
     }
@@ -37,6 +36,7 @@ export default class extends Component {
     render() {
         const { operationData } = this.props;
         const { htmlFrag } = operationData;
+        const { type } = this.state;
 
         return (
             <div className="operation-wrap" id="operationWrap">
@@ -45,3 +45,4 @@ export default class extends Component {
         );
     }
 }
+

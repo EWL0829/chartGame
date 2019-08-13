@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Chart from '../../component/Chart';
 import Operation from '../../component/Operation';
 import { message } from "../../utils/Messenger";
-import FirstPage from '../../component/FirstPage';
-import JudgeRoute from '../../component/JudgeRoute';
+import Prediction from '../../component/Prediction';
+import SelectTradeRoute from '../../component/SelectTradeRoute';
+import Order from '../../component/Order';
 import './index.less';
 
 export default class extends Component {
     state = {
         step: 0,
+        type: '',
+        tradeType:'',
         // chart绘制区域定义域/值域
         axisRangeData: [
             { date: new Date('2019-09-01T00:00'), value: 0 },
@@ -61,54 +64,74 @@ export default class extends Component {
                     ],
                     deletePart: [''],
                 },
+                {
+                    lineData: [
+                        { date: new Date('2019-09-14T00:00'), value: 8804 },
+                        { date: new Date('2019-09-15T00:00'), value: 9000 },
+                        { date: new Date('2019-09-16T00:00'), value: 6500 },
+                    ],
+                    deletePart: [''],
+                },
             ],
         }
     };
 
-    constructor(props) {
-        super(props);
-
-        this.operationData = [
-            {
-                htmlFrag: <FirstPage stepForward={this.stepForward.bind(this)} />,
-            },
-            {
-                htmlFrag: <JudgeRoute />,
-            }
-        ];
-    }
-
-    // 前进一步
-    stepForward = (routeName) => {
+    // 前进一步，byPassedStep表示特殊步数的处理，例如分叉路段
+    stepForward = (routeName, config = {}) => {
         const { step } = this.state;
-        let newStep = step + 1;
+        const { byPassedStep, type, tradeType } = config;
+        let newStep = byPassedStep || step + 1;
 
-        message.postMessage('stepForward', { routeName });
+        // 超出操作步数时
+        if (newStep > (this.operationData.length - 1)) {
+            return;
+        }
+
+        message.postMessage('stepForward', { routeName, type, tradeType });
 
         this.setState({
             step: newStep,
+            type,
+            tradeType,
         });
     };
 
     // 退后一步
-    stepBackward = (routeName) => {
+    stepBackward = (routeName, config = {}) => {
         const { step } = this.state;
-        let newStep = step - 1;
+        const { byPassedStep, type, tradeType } = config;
+        let newStep = byPassedStep || step - 1;
 
+        // 小于0时
         if (newStep < 0) {
             return;
         }
 
-        message.postMessage('stepBackward', { routeName });
+        message.postMessage('stepBackward', { routeName, type, tradeType });
 
         this.setState({
             step: newStep,
+            type,
+            tradeType,
         });
     };
 
+    renderCurStep = (step) => {
+        const { type, tradeType } = this.state;
+
+        this.operationData = [
+            { htmlFrag: <Prediction stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
+            { htmlFrag: <SelectTradeRoute stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
+            { htmlFrag: <Order stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
+        ];
+
+        return this.operationData[step];
+    };
+
     render() {
-        const { step, data, axisRangeData } = this.state;
+        const { step, data, axisRangeData, type } = this.state;
         const { deletePart, lineData } = data.chartData[step];
+        const curStep = this.renderCurStep(step);
 
         return (
             <div className="future-guide-wrap guide-wrap">
@@ -116,10 +139,10 @@ export default class extends Component {
                 <Chart deletePart={deletePart} chartData={lineData} axisRangeData={axisRangeData} />
 
                 {/* 操作区域 */}
-                <Operation operationData={this.operationData[step]}/>
+                <Operation operationData={curStep}/>
 
                 {/* 返回上一关 */}
-                <div className="back-prev" onClick={() => this.stepBackward()}>
+                <div className="back-prev" onClick={() => this.stepBackward(type, { type })}>
                     <span className="back-prev-text">&lt;&lt;我后悔了</span>
                 </div>
             </div>
