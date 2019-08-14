@@ -5,14 +5,11 @@ import './index.less';
 const duration = 2000;
 export default class extends Component {
     state = {
-        showTransition: false, // 是否展示过渡文案
+        showTransition: true, // 是否展示过渡文案
         showMainCon: false, // 是否展示正式文案
     };
 
     componentDidMount() {
-        this.setState({
-            showTransition: true
-        });
         this.timer = setTimeout(() => {
             this.setState({
                 showTransition: false,
@@ -46,6 +43,10 @@ export default class extends Component {
                         <span>你所持有的</span>
                         <span className={`underline ${type === 'up' ? 'up-text' : 'down-text'}`}>BTCUSD-当周-{isLittle ? littlePrice : largePrice}-{expectTrend}</span>
                         <span>合约市场价已经涨到{isLittle ? firstChangeLittleCurPrice : firstChangeLargeCurPrice}</span>
+                    </div>
+                    <div className="guide-btn-wrap">
+                        <div className="guide-btn large-size" onClick={() => this.props.stepForward(type, { type, tradeType, byPassedStep: 7 })}>立即卖出，锁定收益</div>
+                        <div className="guide-btn large-size keep-going-btn" onClick={() => this.props.stepForward(type, { type, tradeType })}>继续持有，博取更高收益</div>
                     </div>
                 </div>
             </div>

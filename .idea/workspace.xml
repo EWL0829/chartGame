@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7886bae-7a1e-4e09-8084-78b78f3ffad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/FirstSelect/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/FirstSelect/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/PayAction/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Number.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/SecondSelect/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Order/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Order/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FirstSelect/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FirstSelect/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Operation/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Operation/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/futureGuide/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/futureGuide/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,11 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+            <state relative-caret-position="318">
+              <caret line="118" column="47" lean-forward="true" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/SecondSelect/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -50,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/Operation/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="417">
+              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -59,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state>
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -68,29 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/Prediction/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="87" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="87" />
+            <state relative-caret-position="528">
+              <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -201,11 +192,12 @@
         <option value="$PROJECT_DIR$/src/component/Order/index.js" />
         <option value="$PROJECT_DIR$/src/component/PayAction/index.js" />
         <option value="$PROJECT_DIR$/src/index.less" />
+        <option value="$PROJECT_DIR$/src/component/FirstSelect/index.less" />
+        <option value="$PROJECT_DIR$/src/component/FirstSelect/index.js" />
+        <option value="$PROJECT_DIR$/src/component/Operation/index.less" />
+        <option value="$PROJECT_DIR$/src/component/SecondSelect/index.js" />
         <option value="$PROJECT_DIR$/src/constants/index.js" />
         <option value="$PROJECT_DIR$/src/pages/futureGuide/index.js" />
-        <option value="$PROJECT_DIR$/src/component/Operation/index.less" />
-        <option value="$PROJECT_DIR$/src/component/FirstSelect/index.js" />
-        <option value="$PROJECT_DIR$/src/component/FirstSelect/index.less" />
       </list>
     </option>
   </component>
@@ -243,7 +235,13 @@
               <item name="chart-game-guide" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstSelect" type="462c0819:PsiDirectoryNode" />
+              <item name="SecondSelect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chart-game-guide" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chart-game-guide" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chart-game-guide" type="b2602c69:ProjectViewProjectNode" />
@@ -313,7 +311,7 @@
       <workItem from="1565608967286" duration="513000" />
       <workItem from="1565661809785" duration="13940000" />
       <workItem from="1565763331654" duration="2487000" />
-      <workItem from="1565770294602" duration="5395000" />
+      <workItem from="1565770294602" duration="7818000" />
     </task>
     <task id="LOCAL-00001" summary="初始化路线前进以及后退逻辑">
       <created>1565251820275</created>
@@ -350,11 +348,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565689212600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加后下单以及首次市场价格波动">
+      <created>1565778524105</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565778524105</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44000000" />
+    <option name="totallyTimeSpent" value="46423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -390,7 +395,8 @@
     <MESSAGE value="提供删除配置" />
     <MESSAGE value="将单步的操作区域html片段拆出为组件" />
     <MESSAGE value="初始化区分路线以及二级路线，chart绘制/删除元素" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化区分路线以及二级路线，chart绘制/删除元素" />
+    <MESSAGE value="添加后下单以及首次市场价格波动" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加后下单以及首次市场价格波动" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -552,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PayAction/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -569,10 +568,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
+    <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        <state relative-caret-position="324">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -581,25 +587,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/Operation/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="417">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.js">
+    <entry file="file://$PROJECT_DIR$/src/component/SecondSelect/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state relative-caret-position="342">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/FirstSelect/index.less">
+    <entry file="file://$PROJECT_DIR$/src/constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="528">
+          <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/futureGuide/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="118" column="47" lean-forward="true" selection-start-line="118" selection-start-column="47" selection-end-line="118" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

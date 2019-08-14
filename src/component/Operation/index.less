@@ -38,7 +38,7 @@
                 color: rgba(255, 255, 255, .8);
                 background: rgba(48, 117, 238, .8);
                 margin: 0 20px;
-                transition: background linear .1s;
+                transition: all .1s ease-in-out;
 
                 &.large-size {
                     width: 450px;
@@ -62,6 +62,16 @@
 
                     &:hover {
                         background: rgba(193, 102, 97, 1);
+                    }
+                }
+
+                &.keep-going-btn {
+                    background: rgba(255, 255, 255, .8);
+                    color: rgba(0, 0, 0, .8);
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 1);
+                        color: rgba(0, 0, 0, 1);
                     }
                 }
             }

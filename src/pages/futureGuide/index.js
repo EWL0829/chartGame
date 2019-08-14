@@ -15,6 +15,7 @@ export default class extends Component {
         type: '', // 交易大致类型 上涨/下跌
         tradeType:'', // 交易具体类型
         tradeNum: 0, // 交易的BTC数量
+        backShowAgain: false, // 是否重新渲染
         axisRangeData: [
             { date: new Date('2019-09-01T00:00'), value: 0 },
             { date: new Date('2019-09-02T00:00'), value: 10000 },
@@ -81,7 +82,11 @@ export default class extends Component {
                 {
                     lineData: [],
                     deletePart: [],
-                }
+                },
+                {
+                    lineData: [],
+                    deletePart: [],
+                },
             ],
         }
     };
@@ -124,6 +129,7 @@ export default class extends Component {
             step: newStep,
             type,
             tradeType,
+            backShowAgain: true,
         });
     };
 
