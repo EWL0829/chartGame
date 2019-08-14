@@ -5,14 +5,16 @@ import { message } from "../../utils/Messenger";
 import Prediction from '../../component/Prediction';
 import SelectTradeRoute from '../../component/SelectTradeRoute';
 import Order from '../../component/Order';
+import PayAction from '../../component/PayAction';
+import FirstSelect from '../../component/FirstSelect';
 import './index.less';
 
 export default class extends Component {
     state = {
-        step: 0,
-        type: '',
-        tradeType:'',
-        // chart绘制区域定义域/值域
+        step: 0, // 当前步数排序
+        type: '', // 交易大致类型 上涨/下跌
+        tradeType:'', // 交易具体类型
+        tradeNum: 0, // 交易的BTC数量
         axisRangeData: [
             { date: new Date('2019-09-01T00:00'), value: 0 },
             { date: new Date('2019-09-02T00:00'), value: 10000 },
@@ -34,7 +36,7 @@ export default class extends Component {
             { date: new Date('2019-09-18T00:00'), value: 10000 },
             { date: new Date('2019-09-19T00:00'), value: 10000 },
             { date: new Date('2019-09-20T00:00'), value: 10000 },
-        ],
+        ], // chart绘制区域定义域/值域
         data: {
             chartData: [
                 {
@@ -62,7 +64,7 @@ export default class extends Component {
                         { date: new Date('2019-09-13T00:00'), value: 7623 },
                         { date: new Date('2019-09-14T00:00'), value: 8804 },
                     ],
-                    deletePart: [''],
+                    deletePart: [],
                 },
                 {
                     lineData: [
@@ -70,8 +72,16 @@ export default class extends Component {
                         { date: new Date('2019-09-15T00:00'), value: 9000 },
                         { date: new Date('2019-09-16T00:00'), value: 6500 },
                     ],
-                    deletePart: [''],
+                    deletePart: [],
                 },
+                {
+                    lineData: [],
+                    deletePart: [],
+                },
+                {
+                    lineData: [],
+                    deletePart: [],
+                }
             ],
         }
     };
@@ -79,7 +89,7 @@ export default class extends Component {
     // 前进一步，byPassedStep表示特殊步数的处理，例如分叉路段
     stepForward = (routeName, config = {}) => {
         const { step } = this.state;
-        const { byPassedStep, type, tradeType } = config;
+        const { byPassedStep, type, tradeType, tradeNum } = config;
         let newStep = byPassedStep || step + 1;
 
         // 超出操作步数时
@@ -93,6 +103,7 @@ export default class extends Component {
             step: newStep,
             type,
             tradeType,
+            tradeNum: tradeNum || this.state.tradeNum,
         });
     };
 
@@ -117,12 +128,14 @@ export default class extends Component {
     };
 
     renderCurStep = (step) => {
-        const { type, tradeType } = this.state;
+        const { type, tradeType, tradeNum } = this.state;
 
         this.operationData = [
             { htmlFrag: <Prediction stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
             { htmlFrag: <SelectTradeRoute stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
             { htmlFrag: <Order stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
+            { htmlFrag: <PayAction stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
+            { htmlFrag: <FirstSelect stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
         ];
 
         return this.operationData[step];

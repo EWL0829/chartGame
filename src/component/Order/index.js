@@ -53,7 +53,7 @@ export default class extends Component {
                     <div className="input-line-item">={pieceNum}张</div>
                 </div>
                 <div className="guide-btn-wrap">
-                    <div className="guide-btn large-size" onClick={() => this.props.stepForward(type, { type, tradeType })}>确认买入数量</div>
+                    <div className="guide-btn large-size" onClick={() => this.props.stepForward(type, { type, tradeType, tradeNum: inputValue })}>确认买入数量</div>
                 </div>
 
             </div>
