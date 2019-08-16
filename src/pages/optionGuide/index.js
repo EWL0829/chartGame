@@ -7,6 +7,11 @@ import SelectTradeRoute from '../../component/SelectTradeRoute';
 import Order from '../../component/Order';
 import PayAction from '../../component/PayAction';
 import FirstSelect from '../../component/FirstSelect';
+import SecondSelect from '../../component/SecondSelect';
+import FinalExecute from '../../component/FinalExecute';
+
+import FirstSelectEnd from '../../component/FirstSelectEnd';
+import SecondSelectEnd from '../../component/SecondSelectEnd';
 import './index.less';
 
 export default class extends Component {
@@ -87,11 +92,23 @@ export default class extends Component {
                     lineData: [],
                     deletePart: [],
                 },
+                {
+                    lineData: [],
+                    deletePart: [],
+                },
+                {
+                    lineData: [],
+                    deletePart: [],
+                },
+                {
+                    lineData: [],
+                    deletePart: [],
+                },
             ],
-        }
+        },
     };
 
-    // 前进一步，byPassedStep表示特殊步数的处理，例如分叉路段
+    // 前进一步，byPassedStep表示特殊步数的处理，例如分叉路线/结局
     stepForward = (routeName, config = {}) => {
         const { step } = this.state;
         const { byPassedStep, type, tradeType, tradeNum } = config;
@@ -142,6 +159,13 @@ export default class extends Component {
             { htmlFrag: <Order stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} />, },
             { htmlFrag: <PayAction stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
             { htmlFrag: <FirstSelect stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
+            { htmlFrag: <SecondSelect stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
+            { htmlFrag: <FinalExecute stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
+
+            // 结局1
+            { htmlFrag: <FirstSelectEnd stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
+            // 结局2
+            { htmlFrag: <SecondSelectEnd stepForward={this.stepForward.bind(this)} type={type} tradeType={tradeType} tradeNum={tradeNum} /> },
         ];
 
         return this.operationData[step];
